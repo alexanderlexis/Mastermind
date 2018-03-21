@@ -1,11 +1,6 @@
 <?php
 include 'credentials.php';
 
-$ser = "localhost";
-$dab = "mastermind";
-$usn = "root";
-$psw = "root";
-
 $col1 = $_GET['mcol1'];
 $col2 = $_GET['mcol2'];
 $col3 = $_GET['mcol3'];
