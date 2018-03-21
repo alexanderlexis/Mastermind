@@ -1,7 +1,7 @@
 <html>
     <head>
         <?php 
-        //comment
+        //comment2
             $ser = "localhost";
             $dab = "mastermind";
             $usn = "root";
