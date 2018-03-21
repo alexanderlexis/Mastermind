@@ -15,10 +15,11 @@
         while($row = $results->fetch_assoc()){
             $arrayGuess = [$row['col1'], $row['col2'], $row['col3'], $row['col4']];
         }
-        
+    
+    if (isset($arrayGuess)){    
     if ($arrayGuess === $masterArray){
         echo "<h1>Je hebt gewonnen!</h1>";
-    } else {
+        } else {
         echo "<h2>Helaas, probeer nog een keer</h2>";
+        }
     }
-                
