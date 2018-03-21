@@ -1,3 +1,6 @@
+<?php
+    include 'check.php';
+?>
 <html>
     <head>
         <?php 
@@ -5,7 +8,7 @@
             $ser = "localhost";
             $dab = "mastermind";
             $usn = "root";
-            $psw = "";
+            $psw = "root";
             $conn = mysqli_connect($ser, $usn, $psw, $dab);
         ?>
         <link rel="stylesheet" href="style.css">
@@ -52,7 +55,7 @@
                     document.getElementById("searchResult").innerHTML = xhttp.responseText;
                 }
                 };
-                xhttp.open("GET", "check.php?col1="+col1+"&col2="+col2+"&col3="+col3+"&col4="+col4, true);
+                xhttp.open("GET", "insert.php?col1="+col1+"&col2="+col2+"&col3="+col3+"&col4="+col4, true);
                 xhttp.send();
             }
         </script>
@@ -136,6 +139,7 @@
             <input type="submit" value="Check" onclick="check()">
         </form>
         
+        
         <div id="allgeprobeerd">
             <ul>
                 <?php
@@ -145,7 +149,7 @@
                 while($row = $results->fetch_assoc()){
                     echo "<li>";
                     echo $row['col1'],' ' ,$row['col2'], ' ' ,$row['col3'], ' ' ,$row['col4'];
-                }
+                }               
 
                 ?>
             </ul>
