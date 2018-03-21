@@ -1,6 +1,7 @@
 <html>
     <head>
         <?php 
+        //comment
             $ser = "localhost";
             $dab = "mastermind";
             $usn = "root";
