@@ -61,7 +61,7 @@
         </script>
     </head>
     <body>
-  <header>
+        <header> 
             <div id="master">
             <form action="index.php">
             <select id="mcol1" name="mcol1" >
