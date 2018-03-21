@@ -1,9 +1,5 @@
 <?php 
-    $ser = "localhost";
-    $dab = "mastermind";
-    $usn = "root";
-    $psw = "";
-    $conn = mysqli_connect($ser, $usn, $psw, $dab);
+    include 'credentials.php';
             
             
     $master = "SELECT `col1`, `col2`, `col3`, `col4` FROM `master` WHERE 1;";
@@ -26,4 +22,3 @@
         echo "<h2>Helaas, probeer nog een keer</h2>";
     }
                 
-             
