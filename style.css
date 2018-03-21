@@ -1,0 +1,15 @@
+.circle{
+    height: 50px;
+    width: 50px;
+    background-color: tomato;
+    border-radius: 50px;
+}
+.goed{
+        border: 5px solid #2ca02c;
+}
+.fout{
+        border: 5px solid #d62728;
+}
+.plek{
+        border: 5px solid yellow;
+}
