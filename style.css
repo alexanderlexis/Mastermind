@@ -1,7 +1,32 @@
+select{
+    height: 110px;
+    width: 110px;
+    border-radius: 100px;
+    text-align: center;
+}
+/*==================================================*/
+.blue{
+    background-color: cornflowerblue;
+}
+.purple{
+    background-color: blueviolet;
+}
+.orange{
+    background-color: orange;
+}
+.red{
+    background-color: tomato;
+}
+.yellow{
+    background-color: gold;
+}
+.green{
+    background-color: limegreen;
+}
+
 .circle{
     height: 50px;
     width: 50px;
-    background-color: tomato;
     border-radius: 50px;
 }
 .goed{
