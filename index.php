@@ -1,7 +1,3 @@
-<?php
-    include 'check.php';
-    include 'credentials.php';
-?>
 <html>
     <head>      
         <link rel="stylesheet" href="style.css">
@@ -54,6 +50,7 @@
         </script>
     </head>
     <body>
+        <h1>Patrick's Mastermind</h1>
         <header> 
             <div id="master">
             <form action="index.php">
@@ -90,7 +87,7 @@
                 <option class="orange" value="orange">Orange</option>
             </select>
                 <!--<input type="submit" value="Set master" onclick="setMaster()">-->
-                <input type="submit" value="Set master >" onclick="updateMaster()">
+                <input type="submit" value="Set master >" onclick="setMaster()">
             </form>
             </div>
         </header>
@@ -128,10 +125,13 @@
                 <option class="purple" value="purple">Purple</option>
                 <option class="orange" value="orange">Orange</option>
             </select>
-            <input type="submit" value="insert" onclick="insert()">
+            <input type="submit" value="Check je code >" onclick="insert()">
         </form>
-        
-        
+<?php            
+    include 'check.php';
+    include 'credentials.php';
+?>
+        <h2>Al geprobeerd:</h2>
         <div id="allgeprobeerd">
             <ul>
                 <?php
@@ -140,13 +140,26 @@
 
                 while($row = $results->fetch_assoc()){
                     echo "<li>";
-                    echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div>';
+                    echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div><br>';
                 }               
                     
+                foreach ($guessArray as $guess){
+                    if(in_array($guess, $checkArray)){
+                        echo '<div class="circle goed"></div>'; 
+                    } elseif ((!in_array($guess, $checkArray) && (in_array($guess, $masterArray)))){
+                        echo '<div class="circle plek"></div>';
+                    } else {
+                        echo '<div class="circle fout"></div>';
+                    }
+                }
+//                foreach ($checkArray as $goedePlek){
+//                    echo '<div class="circle goed"></div>';
+//                }
                 ?>
+                
             </ul>
-        <div class="circle goed"></div>
+<!--        <div class="circle goed"></div>
         <div class="circle fout"></div>
-        <div class="circle plek"></div>
+        <div class="circle plek"></div>-->
     </body>
 </html>
