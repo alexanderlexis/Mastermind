@@ -1,5 +1,6 @@
 <?php
     include 'check.php';
+    include 'credentials.php';
 ?>
 <html>
     <head>
