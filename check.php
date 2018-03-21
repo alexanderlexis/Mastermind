@@ -1,17 +1,31 @@
-<?php
-$ser = "localhost";
-$dab = "mastermind";
-$usn = "root";
-$psw = "";
+<?php 
+    $ser = "localhost";
+    $dab = "mastermind";
+    $usn = "root";
+    $psw = "root";
+    $conn = mysqli_connect($ser, $usn, $psw, $dab);
+            
+            
+    $master = "SELECT `col1`, `col2`, `col3`, `col4` FROM `master` WHERE id=1;";
+    $masterCode = $conn->query($master);
+                
+        while($row = $masterCode->fetch_assoc()){
+            $masterArray = [$row['col1'], $row['col2'], $row['col3'], $row['col4']];
+            print_r($masterArray);
+        }
+        
+    $allTries = "SELECT `col1`, `col2`, `col3`, `col4` FROM `try` WHERE 1;";
+    $results = $conn->query($allTries);
 
-$col1 = $_GET['col1'];
-$col2 = $_GET['col2'];
-$col3 = $_GET['col3'];
-$col4 = $_GET['col4'];
-
-$conn = mysqli_connect($ser, $usn, $psw, $dab);
-echo $col1,$col2,$col3,$col4;
-$sqlInsert = "INSERT INTO `try`(`name`,`col1`, `col2`, `col3`, `col4`) VALUES ('try','$col1','$col2','$col3','$col4');";
-
-$conn->query($sqlInsert);
-
+        while($row = $results->fetch_assoc()){
+            $arrayGuess = [$row['col1'], $row['col2'], $row['col3'], $row['col4']];
+            print_r($arrayGuess);
+        }
+        
+    if ($arrayGuess === $masterArray){
+        echo "<h1>Je hebt gewonnen!</h1>";
+    } else {
+        echo "<h2>Helaas, probeer nog een keer</h2>";
+    }
+                
+             
