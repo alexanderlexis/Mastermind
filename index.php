@@ -8,7 +8,7 @@
             $ser = "localhost";
             $dab = "mastermind";
             $usn = "root";
-            $psw = "root";
+            $psw = "";
             $conn = mysqli_connect($ser, $usn, $psw, $dab);
         ?>
         <link rel="stylesheet" href="style.css">
@@ -43,7 +43,7 @@
                 xhttp.send();
             }
             
-            function check(){
+            function insert(){
                 var col1 =  document.getElementById("col1").value;
                 var col2 =  document.getElementById("col2").value;
                 var col3 =  document.getElementById("col3").value;
@@ -147,9 +147,9 @@
 
                 while($row = $results->fetch_assoc()){
                     echo "<li>";
-                    echo $row['col1'],' ' ,$row['col2'], ' ' ,$row['col3'], ' ' ,$row['col4'];
+                    echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div>';
                 }               
-
+                    
                 ?>
             </ul>
         <div class="circle goed"></div>

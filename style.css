@@ -1,8 +1,27 @@
+.red{
+    background-color: tomato;
+}
+.blue{
+    background-color:  cornflowerblue;
+}
+.yellow{
+    background-color:  gold;
+}
+.green{
+    background-color: limegreen;
+}
+.purple{
+    background-color: blueviolet;
+}
+.orange{
+    background-color: chocolate;
+}
+
 .circle{
     height: 50px;
     width: 50px;
-    background-color: tomato;
     border-radius: 50px;
+    display: inline-block;
 }
 .goed{
         border: 5px solid #2ca02c;
