@@ -2,16 +2,15 @@
     $ser = "localhost";
     $dab = "mastermind";
     $usn = "root";
-    $psw = "root";
+    $psw = "";
     $conn = mysqli_connect($ser, $usn, $psw, $dab);
             
             
-    $master = "SELECT `col1`, `col2`, `col3`, `col4` FROM `master` WHERE id=1;";
+    $master = "SELECT `col1`, `col2`, `col3`, `col4` FROM `master` WHERE 1;";
     $masterCode = $conn->query($master);
                 
         while($row = $masterCode->fetch_assoc()){
             $masterArray = [$row['col1'], $row['col2'], $row['col3'], $row['col4']];
-            print_r($masterArray);
         }
         
     $allTries = "SELECT `col1`, `col2`, `col3`, `col4` FROM `try` WHERE 1;";
@@ -19,7 +18,6 @@
 
         while($row = $results->fetch_assoc()){
             $arrayGuess = [$row['col1'], $row['col2'], $row['col3'], $row['col4']];
-            print_r($arrayGuess);
         }
         
     if ($arrayGuess === $masterArray){
