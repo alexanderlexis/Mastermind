@@ -31,6 +31,16 @@
 //            }
 //        }
            
+
+        for($x = 0 ; $x < 4 ; $x++)
+        if ($guessArray[$x] == $masterArray[$x]){
+            echo '<div class="circle goed"></div>';
+        } elseif ($guessArray[$x] !==$masterArray[$x] && (in_array($guessArray[$x], $masterArray))){
+            echo '<div class="circle plek"></div>';
+        } else {
+            echo '<div class="circle fout"></div>';
+        }
+    
     $checkArray = array_intersect_assoc($masterArray, $guessArray);
     
     print_r($masterArray);

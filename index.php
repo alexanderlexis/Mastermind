@@ -1,9 +1,8 @@
-<html>
-    <head>
-        <?php            
-            include 'check.php';
-            include 'credentials.php';
-        ?>
+<?php
+    include 'credentials.php';
+    ?>
+<html id='patrick'>
+    <head>      
         <link rel="stylesheet" href="style.css">
         <script>
             function setMaster(){
@@ -20,7 +19,7 @@
                 xhttp.open("GET", "updatemaster.php?mcol1="+mcol1+"&mcol2="+mcol2+"&mcol3="+mcol3+"&mcol4="+mcol4, true);
                 xhttp.send();
             }
-                      
+
             function insert(){
                 var col1 =  document.getElementById("col1").value;
                 var col2 =  document.getElementById("col2").value;
@@ -39,7 +38,6 @@
         </script>
     </head>
     <body>
-        <div id="patrick">
             <h1>Patrick's Mastermind</h1>
             <header> 
                 <div id="master">
@@ -76,7 +74,7 @@
                             <option class="purple" value="purple">Purple</option>
                             <option class="orange" value="orange">Orange</option>
                         </select>
-                        <input type="submit" value="Set master" onclick="setMaster()">
+                        <input type="submit" value="Set master >" onclick="setMaster()">
                     </form>
                 </div>
                  <?php
@@ -90,42 +88,6 @@
 
                 ?>
             </header>
-
-            <form action="index.php">
-                <select id="col1" name="col1" >
-                    <option class="red" value="red">Red</option>
-                    <option class="blue" value="blue">Blue</option>
-                    <option class="yellow" value="yellow">Yellow</option>
-                    <option class="green" value="green">Green</option>
-                    <option class="purple" value="purple">Purple</option>
-                    <option class="orange" value="orange">Orange</option>
-                </select>
-                <select id="col2" name="co21" >
-                    <option class="red" value="red">Red</option>
-                    <option class="blue" value="blue">Blue</option>
-                    <option class="yellow" value="yellow">Yellow</option>
-                    <option class="green" value="green">Green</option>
-                    <option class="purple" value="purple">Purple</option>
-                    <option class="orange" value="orange">Orange</option>
-                </select>
-                <select id="col3" name="col3" >
-                    <option class="red" value="red">Red</option>
-                    <option class="blue" value="blue">Blue</option>
-                    <option class="yellow" value="yellow">Yellow</option>
-                    <option class="green" value="green">Green</option>
-                    <option class="purple" value="purple">Purple</option>
-                    <option class="orange" value="orange">Orange</option>
-                </select>
-                <select id="col4" name="col4" >
-                    <option class="red" value="red">Red</option>
-                    <option class="blue" value="blue">Blue</option>
-                    <option class="yellow" value="yellow">Yellow</option>
-                    <option class="green" value="green">Green</option>
-                    <option class="purple" value="purple">Purple</option>
-                    <option class="orange" value="orange">Orange</option>
-                </select>
-                <input type="submit" value="insert" onclick="insert()">
-            </form>
         
         <form action="index.php">
             <select id="col1" name="col1" >
@@ -162,33 +124,20 @@
             </select>
             <input type="submit" value="Check je code >" onclick="insert()">
         </form>
-
-        <h2>Al geprobeerd:</h2>
+<?php            
+    include 'check.php';
+?>
         <div id="allgeprobeerd">
-            <ul>
+            <h2>Al geprobeerd:</h2>
                 <?php
                     $allTries = "SELECT `col1`, `col2`, `col3`, `col4` FROM `try` WHERE 1;";
                     $results = $conn->query($allTries);
 
                 while($row = $results->fetch_assoc()){
-                    echo "<li>";
                     echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div><br>';
-                }               
-                    
-                foreach ($guessArray as $guess){
-                    if(in_array($guess, $checkArray)){
-                        echo '<div class="circle goed"></div>'; 
-                    } elseif ((!in_array($guess, $checkArray) && (in_array($guess, $masterArray)))){
-                        echo '<div class="circle plek"></div>';
-                    } else {
-                        echo '<div class="circle fout"></div>';
-                    }
-                }
-//                foreach ($checkArray as $goedePlek){
-//                    echo '<div class="circle goed"></div>';
-//                }
-                ?>
+                }    
                 
-            </ul>
+                ?>
+        </div>
     </body>
 </html>
