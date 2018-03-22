@@ -5,7 +5,7 @@
     background-color:  cornflowerblue;
 }
 .yellow{
-    background-color:  gold;
+    background-color:  yellow;
 }
 .green{
     background-color: limegreen;
@@ -14,12 +14,13 @@
     background-color: blueviolet;
 }
 .orange{
-    background-color: chocolate;
+    background-color: orange;
 }
 
 .circle{
     height: 50px;
     width: 50px;
+    margin: 3px;
     border-radius: 50px;
     display: inline-block;
 }
@@ -31,4 +32,27 @@
 }
 .plek{
         border: 5px solid yellow;
+}
+ul{
+    background-color: #ebeab8;
+    min-height: 900px;
+    width: 250px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+li{
+    list-style: none;
+    width: auto;
+}
+#patrick{
+    padding: 20px;
+    min-height: 900px;
+    width: 1200px;
+    background-image: url(a0o5k.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#allgeprobeerd{
+    width: 300px;
+    align-content: center;
 }

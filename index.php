@@ -61,99 +61,112 @@
         </script>
     </head>
     <body>
-        <header> 
-            <div id="master">
-            <form action="index.php">
-            <select id="mcol1" name="mcol1" >
-                <option class="red" value="red">Red</option>
-                <option class="blue" value="blue">Blue</option>
-                <option class="yellow" value="yellow">Yellow</option>
-                <option class="green" value="green">Green</option>
-                <option class="purple" value="purple">Purple</option>
-                <option class="orange" value="orange">Orange</option>
-            </select>
-            <select id="mcol2" name="mco21" >
-                <option class="red" value="red">Red</option>
-                <option class="blue" value="blue">Blue</option>
-                <option class="yellow" value="yellow">Yellow</option>
-                <option class="green" value="green">Green</option>
-                <option class="purple" value="purple">Purple</option>
-                <option class="orange" value="orange">Orange</option>
-            </select>
-            <select id="mcol3" name="mcol3" >
-                <option class="red" value="red">Red</option>
-                <option class="blue" value="blue">Blue</option>
-                <option class="yellow" value="yellow">Yellow</option>
-                <option class="green" value="green">Green</option>
-                <option class="purple" value="purple">Purple</option>
-                <option class="orange" value="orange">Orange</option>
-            </select>
-            <select id="mcol4" name="mcol4" >
-                <option class="red" value="red">Red</option>
-                <option class="blue" value="blue">Blue</option>
-                <option class="yellow" value="yellow">Yellow</option>
-                <option class="green" value="green">Green</option>
-                <option class="purple" value="purple">Purple</option>
-                <option class="orange" value="orange">Orange</option>
-            </select>
-                <input type="submit" value="Set master" onclick="setMaster()">
-                <input type="submit" value="Update master" onclick="updateMaster()">
-            </form>
-            </div>
-        </header>
-        
-        <form action="index.php">
-            <select id="col1" name="col1" >
-                <option class="red" value="red">Red</option>
-                <option class="blue" value="blue">Blue</option>
-                <option class="yellow" value="yellow">Yellow</option>
-                <option class="green" value="green">Green</option>
-                <option class="purple" value="purple">Purple</option>
-                <option class="orange" value="orange">Orange</option>
-            </select>
-            <select id="col2" name="co21" >
-                <option class="red" value="red">Red</option>
-                <option class="blue" value="blue">Blue</option>
-                <option class="yellow" value="yellow">Yellow</option>
-                <option class="green" value="green">Green</option>
-                <option class="purple" value="purple">Purple</option>
-                <option class="orange" value="orange">Orange</option>
-            </select>
-            <select id="col3" name="col3" >
-                <option class="red" value="red">Red</option>
-                <option class="blue" value="blue">Blue</option>
-                <option class="yellow" value="yellow">Yellow</option>
-                <option class="green" value="green">Green</option>
-                <option class="purple" value="purple">Purple</option>
-                <option class="orange" value="orange">Orange</option>
-            </select>
-            <select id="col4" name="col4" >
-                <option class="red" value="red">Red</option>
-                <option class="blue" value="blue">Blue</option>
-                <option class="yellow" value="yellow">Yellow</option>
-                <option class="green" value="green">Green</option>
-                <option class="purple" value="purple">Purple</option>
-                <option class="orange" value="orange">Orange</option>
-            </select>
-            <input type="submit" value="insert" onclick="insert()">
-        </form>
-        
-        
-        <div id="allgeprobeerd">
-            <ul>
-                <?php
-                    $allTries = "SELECT `col1`, `col2`, `col3`, `col4` FROM `try` WHERE 1;";
-                    $results = $conn->query($allTries);
+        <div id="patrick">
+            <header> 
+                <div id="master">
+                    <form action="index.php">
+                        <select id="mcol1" name="mcol1" >
+                            <option class="red" value="red">Red</option>
+                            <option class="blue" value="blue">Blue</option>
+                            <option class="yellow" value="yellow">Yellow</option>
+                            <option class="green" value="green">Green</option>
+                            <option class="purple" value="purple">Purple</option>
+                            <option class="orange" value="orange">Orange</option>
+                        </select>
+                        <select id="mcol2" name="mco21" >
+                            <option class="red" value="red">Red</option>
+                            <option class="blue" value="blue">Blue</option>
+                            <option class="yellow" value="yellow">Yellow</option>
+                            <option class="green" value="green">Green</option>
+                            <option class="purple" value="purple">Purple</option>
+                            <option class="orange" value="orange">Orange</option>
+                        </select>
+                        <select id="mcol3" name="mcol3" >
+                            <option class="red" value="red">Red</option>
+                            <option class="blue" value="blue">Blue</option>
+                            <option class="yellow" value="yellow">Yellow</option>
+                            <option class="green" value="green">Green</option>
+                            <option class="purple" value="purple">Purple</option>
+                            <option class="orange" value="orange">Orange</option>
+                        </select>
+                        <select id="mcol4" name="mcol4" >
+                            <option class="red" value="red">Red</option>
+                            <option class="blue" value="blue">Blue</option>
+                            <option class="yellow" value="yellow">Yellow</option>
+                            <option class="green" value="green">Green</option>
+                            <option class="purple" value="purple">Purple</option>
+                            <option class="orange" value="orange">Orange</option>
+                        </select>
+                        <input type="submit" value="Set master" onclick="setMaster()">
+                        <input type="submit" value="Update master" onclick="updateMaster()">
+                    </form>
+                </div>
+                 <?php
+                        $allTries = "SELECT `col1`, `col2`, `col3`, `col4` FROM `master` WHERE 1;";
+                        $results = $conn->query($allTries);
 
-                while($row = $results->fetch_assoc()){
-                    echo "<li>";
-                    echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div>';
-                }               
-                    
-                ?>
-            </ul>
-        <div class="circle goed"></div>
+                    while($row = $results->fetch_assoc()){
+                        echo "<li>";
+                        echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div>';
+                    }               
+
+                    ?>
+            </header>
+
+            <form action="index.php">
+                <select id="col1" name="col1" >
+                    <option class="red" value="red">Red</option>
+                    <option class="blue" value="blue">Blue</option>
+                    <option class="yellow" value="yellow">Yellow</option>
+                    <option class="green" value="green">Green</option>
+                    <option class="purple" value="purple">Purple</option>
+                    <option class="orange" value="orange">Orange</option>
+                </select>
+                <select id="col2" name="co21" >
+                    <option class="red" value="red">Red</option>
+                    <option class="blue" value="blue">Blue</option>
+                    <option class="yellow" value="yellow">Yellow</option>
+                    <option class="green" value="green">Green</option>
+                    <option class="purple" value="purple">Purple</option>
+                    <option class="orange" value="orange">Orange</option>
+                </select>
+                <select id="col3" name="col3" >
+                    <option class="red" value="red">Red</option>
+                    <option class="blue" value="blue">Blue</option>
+                    <option class="yellow" value="yellow">Yellow</option>
+                    <option class="green" value="green">Green</option>
+                    <option class="purple" value="purple">Purple</option>
+                    <option class="orange" value="orange">Orange</option>
+                </select>
+                <select id="col4" name="col4" >
+                    <option class="red" value="red">Red</option>
+                    <option class="blue" value="blue">Blue</option>
+                    <option class="yellow" value="yellow">Yellow</option>
+                    <option class="green" value="green">Green</option>
+                    <option class="purple" value="purple">Purple</option>
+                    <option class="orange" value="orange">Orange</option>
+                </select>
+                <input type="submit" value="insert" onclick="insert()">
+            </form>
+
+
+            <div id="allgeprobeerd">
+                <ul>
+                    <?php
+                        $allTries = "SELECT `col1`, `col2`, `col3`, `col4` FROM `try` WHERE 1;";
+                        $results = $conn->query($allTries);
+
+                    while($row = $results->fetch_assoc()){
+                        echo "<li>";
+                        echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div>';
+                    }               
+
+                    ?>
+                </ul>
+        </div>
+<!--        <div class="circle goed"></div>
         <div class="circle fout"></div>
-        <div class="circle plek"></div>
+        <div class="circle plek"></div>-->
+        </div>  
     </body>
 </html>
