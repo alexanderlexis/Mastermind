@@ -124,7 +124,6 @@
 
                 while($row = $results->fetch_assoc()){
                     echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div><br>';
-     
                 }    
                 
                 ?>
