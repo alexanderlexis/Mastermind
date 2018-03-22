@@ -23,6 +23,7 @@
             echo "<h2>Helaas, probeer nog een keer</h2>";
         }
     }
+
     
 //        foreach ($guessArray as $guessKey=>$guessValue){
 //            if (in_array($guessValue, $masterArray)){
@@ -47,3 +48,5 @@
     print_r($guessArray);
     echo "<br>";
     print_r($checkArray);
+                
+
