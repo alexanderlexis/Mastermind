@@ -1,34 +1,57 @@
 .red{
-    background-color: tomato;
+   background-color: tomato;
 }
 .blue{
-    background-color:  cornflowerblue;
+   background-color:  cornflowerblue;
 }
 .yellow{
-    background-color:  gold;
+   background-color:  yellow;
 }
 .green{
-    background-color: limegreen;
+   background-color: limegreen;
 }
 .purple{
-    background-color: blueviolet;
+   background-color: blueviolet;
 }
 .orange{
-    background-color: chocolate;
+   background-color: orange;
 }
 
 .circle{
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
-    display: inline-block;
+   height: 50px;
+   width: 50px;
+   margin: 3px;
+   border-radius: 50px;
+   display: inline-block;
 }
 .goed{
-        border: 5px solid #2ca02c;
+       border: 5px solid #2ca02c;
 }
 .fout{
-        border: 5px solid #d62728;
+       border: 5px solid #d62728;
 }
 .plek{
-        border: 5px solid yellow;
+       border: 5px solid yellow;
+}
+
+#patrick{
+   padding: 20px;
+   min-height: 900px;
+   width: 1200px;
+   background-image: url("imgs/patwrijf.gif");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+#allgeprobeerd{
+   width: 300px;
+   align-content: center;
+   text-align: center;
+   background-color: #ebeab8;
+   min-height: 900px;
+   padding-top: 5px;
+   padding-bottom: 30px;
+}
+
+body{
+    margin-left: 10%;
 }
