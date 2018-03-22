@@ -1,4 +1,6 @@
-
+<?php
+    include 'credentials.php';
+    ?>
 <html id='patrick'>
     <head>      
         <link rel="stylesheet" href="style.css">
@@ -36,7 +38,6 @@
         </script>
     </head>
     <body>
-        <div id="patrick">
             <h1>Patrick's Mastermind</h1>
             <header> 
                 <div id="master">
@@ -73,7 +74,7 @@
                             <option class="purple" value="purple">Purple</option>
                             <option class="orange" value="orange">Orange</option>
                         </select>
-                        <input type="submit" value="Set master" onclick="setMaster()">
+                        <input type="submit" value="Set master >" onclick="setMaster()">
                     </form>
                 </div>
                  <?php
@@ -87,42 +88,6 @@
 
                 ?>
             </header>
-
-            <form action="index.php">
-                <select id="col1" name="col1" >
-                    <option class="red" value="red">Red</option>
-                    <option class="blue" value="blue">Blue</option>
-                    <option class="yellow" value="yellow">Yellow</option>
-                    <option class="green" value="green">Green</option>
-                    <option class="purple" value="purple">Purple</option>
-                    <option class="orange" value="orange">Orange</option>
-                </select>
-                <select id="col2" name="co21" >
-                    <option class="red" value="red">Red</option>
-                    <option class="blue" value="blue">Blue</option>
-                    <option class="yellow" value="yellow">Yellow</option>
-                    <option class="green" value="green">Green</option>
-                    <option class="purple" value="purple">Purple</option>
-                    <option class="orange" value="orange">Orange</option>
-                </select>
-                <select id="col3" name="col3" >
-                    <option class="red" value="red">Red</option>
-                    <option class="blue" value="blue">Blue</option>
-                    <option class="yellow" value="yellow">Yellow</option>
-                    <option class="green" value="green">Green</option>
-                    <option class="purple" value="purple">Purple</option>
-                    <option class="orange" value="orange">Orange</option>
-                </select>
-                <select id="col4" name="col4" >
-                    <option class="red" value="red">Red</option>
-                    <option class="blue" value="blue">Blue</option>
-                    <option class="yellow" value="yellow">Yellow</option>
-                    <option class="green" value="green">Green</option>
-                    <option class="purple" value="purple">Purple</option>
-                    <option class="orange" value="orange">Orange</option>
-                </select>
-                <input type="submit" value="insert" onclick="insert()">
-            </form>
         
         <form action="index.php">
             <select id="col1" name="col1" >
@@ -161,7 +126,6 @@
         </form>
 <?php            
     include 'check.php';
-    include 'credentials.php';
 ?>
         <div id="allgeprobeerd">
             <h2>Al geprobeerd:</h2>
