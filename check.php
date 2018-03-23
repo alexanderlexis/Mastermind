@@ -11,7 +11,6 @@
         
     $allTries = "SELECT `col1`, `col2`, `col3`, `col4` FROM `try` WHERE 1;";
     $results = $conn->query($allTries);
-
         while($row = $results->fetch_assoc()){
             $guessArray = [$row['col1'], $row['col2'], $row['col3'], $row['col4']];
         }
@@ -23,7 +22,6 @@
             echo "<h2>Helaas, probeer nog een keer</h2>";
         }
     }
-
     
 //        foreach ($guessArray as $guessKey=>$guessValue){
 //            if (in_array($guessValue, $masterArray)){
@@ -31,7 +29,6 @@
 //            }
 //        }
            
-
         for($x = 0 ; $x < 4 ; $x++)
         if ($guessArray[$x] == $masterArray[$x]){
             echo '<div class="circle goed"></div>';
@@ -40,13 +37,3 @@
         } else {
             echo '<div class="circle fout"></div>';
         }
-    
-    $checkArray = array_intersect_assoc($masterArray, $guessArray);
-    
-    print_r($masterArray);
-    echo "<br>";
-    print_r($guessArray);
-    echo "<br>";
-    print_r($checkArray);
-                
-
