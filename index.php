@@ -19,7 +19,6 @@
                 xhttp.open("GET", "updatemaster.php?mcol1="+mcol1+"&mcol2="+mcol2+"&mcol3="+mcol3+"&mcol4="+mcol4, true);
                 xhttp.send();
             }
-
             function insert(){
                 var col1 =  document.getElementById("col1").value;
                 var col2 =  document.getElementById("col2").value;
@@ -75,18 +74,16 @@
                             <option class="orange" value="orange">Orange</option>
                         </select>
                         <input type="submit" value="Set master >" onclick="setMaster()">
+                        <?php
+                            $allTries = "SELECT `col1`, `col2`, `col3`, `col4` FROM `master` WHERE 1;";
+                            $results = $conn->query($allTries);
+                            while($row = $results->fetch_assoc()){
+                                echo '<br>';
+                                echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div>';
+                            }                  
+                        ?>
                     </form>
                 </div>
-                 <?php
-                        $allTries = "SELECT `col1`, `col2`, `col3`, `col4` FROM `master` WHERE 1;";
-                        $results = $conn->query($allTries);
-
-                    while($row = $results->fetch_assoc()){
-                        echo "<li>";
-                        echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div>';
-                    }               
-
-                ?>
             </header>
         
         <form action="index.php">
@@ -124,17 +121,19 @@
             </select>
             <input type="submit" value="Check je code >" onclick="insert()">
         </form>
-<?php            
-    include 'check.php';
-?>
         <div id="allgeprobeerd">
+            <?php            
+                include 'check.php';
+            ?>
             <h2>Al geprobeerd:</h2>
                 <?php
                     $allTries = "SELECT `col1`, `col2`, `col3`, `col4` FROM `try` WHERE 1;";
                     $results = $conn->query($allTries);
-
                 while($row = $results->fetch_assoc()){
-                    echo '<div class="circle  '.$row['col1'].'"></div>','<div class="circle  '.$row['col2'].'"></div>','<div class="circle  '.$row['col3'].'"></div>','<div class="circle  '.$row['col4'].'"></div><br>';
+                    echo '<div class="circle  '.$row['col1'].'"></div>',
+                         '<div class="circle  '.$row['col2'].'"></div>',
+                         '<div class="circle  '.$row['col3'].'"></div>',
+                         '<div class="circle  '.$row['col4'].'"></div><br>';
                 }    
                 
                 ?>
