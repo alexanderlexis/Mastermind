@@ -7,7 +7,7 @@ $col3 = $_GET['mcol3'];
 $col4 = $_GET['mcol4'];
 
 $sqlUpdate = "UPDATE `master` SET `col1`='$col1',`col2`='$col2',`col3`='$col3',`col4`='$col4' WHERE id=1;";
-echo $sqlUpdate;
+//echo $sqlUpdate;
 $conn->query($sqlUpdate);
 
 //UPDATE `master` SET `col1`=$col1,`col2`=$col2,`col3`=$col3,`col4`=$col4 WHERE 1;

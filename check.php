@@ -1,7 +1,6 @@
 <?php 
     include 'credentials.php';
-            
-            
+           
     $master = "SELECT `col1`, `col2`, `col3`, `col4` FROM `master` WHERE 1;";
     $masterCode = $conn->query($master);
                 
@@ -18,9 +17,11 @@
     if (isset($guessArray)){
         if ($guessArray === $masterArray){
             echo "<h2 style = color:green;>Je hebt gewonnen!</h2>";
+        } elseif ($levens >= 10) {
+            echo "<h2 style = color:red;>Geen levens meer, Patrick wint!</h2>";
         } else {
             echo "<h2 style = color:red;>Helaas, probeer nog een keer</h2>";
-        } 
+        }
     }
     
     if ($levens >= 10){

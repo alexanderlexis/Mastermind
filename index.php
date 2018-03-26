@@ -9,8 +9,7 @@
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
-                    // Typical action to be performed when the document is read:
-                }
+                    }
                 };
                 xhttp.open("GET", "reset.php", true);
                 xhttp.send();
@@ -24,8 +23,7 @@
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
-                    // Typical action to be performed when the document is read:
-                }
+                    }
                 };
                 xhttp.open("GET", "updatemaster.php?mcol1="+mcol1+"&mcol2="+mcol2+"&mcol3="+mcol3+"&mcol4="+mcol4, true);
                 xhttp.send();
@@ -38,9 +36,8 @@
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
-                    // Typical action to be performed when the document is ready:
                     document.getElementById("searchResult").innerHTML = xhttp.responseText;
-                }
+                    }
                 };
                 xhttp.open("GET", "insert.php?col1="+col1+"&col2="+col2+"&col3="+col3+"&col4="+col4, true);
                 xhttp.send();
